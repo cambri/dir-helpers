@@ -1,0 +1,31 @@
+{
+    "name": "hyn/dir-helpers",
+    "description": "Helpers to easily navigate different folders.",
+    "license": "MIT",
+    "keywords": ["directory", "memory", "terminal"],
+    "authors": [
+        {
+            "name": "Daniël Klabbers",
+            "email": "daniel+hyn@klabbers.email",
+            "homepage": "http://hyn.io"
+        }
+    ],
+    "require" : {
+        "php": ">=5.5.9",
+        "symfony/console": "^3.0",
+        "illuminate/support": "^5.2",
+        "illuminate/database": "^5.2",
+        "symfony/filesystem": "^3.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hyn\\DirHelpers\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "bin": ["bin/dh"]
+}

@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+namespace Hyn\DirHelpers;
+
+$autoloaders = [
+    __DIR__.'/../vendor/autoload.php',
+    __DIR__.'/../../../autoload.php'
+];
+foreach ($autoloaders as $autoload) {
+    if (file_exists($autoload)) {
+        require_once $autoload;
+        break;
+    }
+}
+
+use Symfony\Component\Console\Application;
+
+$console = new Application();
+$console->run();
