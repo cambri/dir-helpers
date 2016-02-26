@@ -14,7 +14,19 @@ foreach ($autoloaders as $autoload) {
     }
 }
 
+use Hyn\DirHelpers\Commands\AddCommand;
+use Hyn\DirHelpers\Models\Directory;
+use Illuminate\Database\SQLiteConnection;
+use PDO;
 use Symfony\Component\Console\Application;
 
 $console = new Application();
+
+$sqliteFile = realpath(__DIR__ . '/../storage/sqlite.db');
+
+$connection = (new SQLiteConnection(new PDO('sqlite:/' . $sqliteFile)));
+Directory::setHynConnection($connection);
+
+$console->add(new AddCommand());
+
 $console->run();
